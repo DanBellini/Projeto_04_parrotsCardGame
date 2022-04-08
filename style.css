@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EEF9BF;
+}
+
+h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+
+    margin: 40px 40px 30px 40px;
+
+    color: #75B79E;
+}
+
+.top {
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.conteiner{
+    display: flex;
+    margin: 0 auto 0 auto;
+    align-items: center;
+}
+
+.game{
+    width: 1023px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto 0 auto;
+}
+
+.card{
+    width: 117px;
+    height: 146px;
+    margin: 0 17px 34px 17px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width:1200px){
+    .game {
+        width: 95%;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+}
+
+@media (max-width: 640px){
+    h1 {
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.004em;
+    }
+}
