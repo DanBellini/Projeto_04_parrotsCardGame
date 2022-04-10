@@ -1,4 +1,8 @@
 let cards;
+let statusGame = 0;
+let finish = 0;
+var countMoves = 0;
+var counthits = 0;
 
 let library = [
   "./imagens/bobrossparrot.gif",
@@ -20,18 +24,11 @@ cardsInGame();
 randomSequence();
 
 function howManyCards() {
-  cards = Number(
-    prompt(
-      "Com quantas cartas vocês quer jogar? \nEscolha um numero par, entre 4 e 14"
-    )
-  );
+  cards = Number(prompt("Com quantas cartas vocês quer jogar? \nEscolha um numero par, entre 4 e 14"));
   while (cards > 14 || cards < 4 || cards % 2 !== 0 || cards == NaN) {
-    cards = Number(
-      prompt(
-        "Por favor, escolha com cartas vocês quer jogar? \nEscolha um numero par, entre 4 e 14"
-      )
-    );
+    cards = Number(prompt("Por favor, escolha com cartas vocês quer jogar? \nEscolha um numero par, entre 4 e 14"));
   }
+  finish = cards;
 }
 
 function cardsInGame() {
@@ -70,6 +67,7 @@ function cardSelect(element) {
   if (cardflip.length < 3) {
     element.classList.add("flip");
     element.querySelector(".parrot").classList.remove("hidden");
+    countMoves++;
 
     if (cardflip.length === 2) {
         let firstCard = cardflip[0];
@@ -81,6 +79,7 @@ function cardSelect(element) {
 
         if (equals === true) {
         cardflip = [];
+        counthits +=2;
         } else if (equals === false){
             setTimeout(function () {
                 firstCard.classList.remove("flip");
@@ -93,5 +92,13 @@ function cardSelect(element) {
             }, 1000);
         }
     }
+    if(counthits === finish){
+        finalizaJogo();
+    };
   }
+}
+function finalizaJogo(){
+    setTimeout(function(){
+        alert("Você ganhou em " + countMoves + " jogadas");
+    }, 500);
 }
