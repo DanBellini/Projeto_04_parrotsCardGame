@@ -1,107 +1,101 @@
 * {
     box-sizing: border-box;
-}
-
-body{
+  }
+  
+  body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #EEF9BF;
-}
-
-h1{
-    font-family: 'Roboto';
+    background-color: #eef9bf;
+  }
+  
+  h1 {
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
     font-size: 56px;
     line-height: 66px;
     letter-spacing: -0.004em;
-
+  
     margin: 40px 40px 30px 40px;
-
-    color: #75B79E;
-}
-
-.top {
+  
+    color: #75b79e;
+  }
+  
+  .top {
     width: 100%;
     height: 25%;
-
+  
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-}
-.conteiner{
+  }
+  
+  .conteiner {
     display: flex;
     margin: 0 auto 0 auto;
     align-items: center;
-}
-
-.game{
+  }
+  
+  .game {
     width: 1130px;
+    margin: 0 auto 0 auto;
+  
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 0 auto 0 auto;
-}
-
-.card{
-
+  }
+  
+  .card {
     width: 119px;
     height: 148px;
     margin: 0 19px 34px 19px;
-
-
+  
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-
-    position: relative;
-}
-.face {
-    width: 100%;
-    height: 100%;
-    background-color: #A7E9AF;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    backface-visibility: hidden;
-    transition: all .5s;
+  
+    background-color: #a7e9af;
+    background-image: url(./imagens/front.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+    transition: transform 0.5s;
     transform-style: preserve-3d;
-}
-
-.back-face {
-    transform: rotateY(180deg);
-}
-
-.card:active .back-face {
     transform: rotateY(0deg);
-}
-
-.card:active .front-face {
-    transform: rotateY(-180deg);
-}
-
-
-img{
+  }
+  
+  img {
     width: 100px;
     height: 100px;
-}
-@media(max-width:1200px){
-    .game{
-        width: 95%;
-        padding-left: 2.5%;
-        padding-right: 2.5%;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .flip {
+    transform: rotateY(180deg);
+    background-image: none;
+  }
+  
+  @media (max-width: 1200px) {
+    .game {
+      width: 95%;
+      padding-left: 2.5%;
+      padding-right: 2.5%;
     }
-}
-@media (max-width: 640px){
+  }
+  
+  @media (max-width: 640px) {
     h1 {
-        font-size: 36px;
-        line-height: 42px;
-        text-align: center;
-        letter-spacing: -0.004em;
+      font-size: 36px;
+      line-height: 42px;
+      text-align: center;
+      letter-spacing: -0.004em;
     }
-}
+  }
+  
