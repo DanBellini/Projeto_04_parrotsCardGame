@@ -1,8 +1,10 @@
 let cards;
 let statusGame = 0;
 let finish = 0;
-var countMoves = 0;
-var counthits = 0;
+let countMoves = 0;
+let counthits = 0;
+let timeseconds = 0;
+let interval;
 
 let library = [
   "./imagens/bobrossparrot.gif",
@@ -29,6 +31,13 @@ function howManyCards() {
     cards = Number(prompt("Por favor, escolha com cartas vocês quer jogar? \nEscolha um numero par, entre 4 e 14"));
   }
   finish = cards;
+  statusGame = "jogando";
+
+
+  if(statusGame === "jogando"){
+      clearInterval(interval);
+      interval = setInterval(timer, 1000);
+  }
 }
 
 function cardsInGame() {
@@ -55,6 +64,7 @@ function randomSequence() {
     inGame.innerHTML = inGame.innerHTML + cardsrandom[i];
     i++;
   }
+
 }
 
 function comparador() {
@@ -93,12 +103,27 @@ function cardSelect(element) {
         }
     }
     if(counthits === finish){
-        finalizaJogo();
+        finishGame();
     };
   }
 }
-function finalizaJogo(){
+function finishGame(){
+    statusGame = "ganhou";
     setTimeout(function(){
-        alert("Você ganhou em " + countMoves + " jogadas");
+        alert(`Você ganhou em ${countMoves} jogadas!!\nDentro de ${timeseconds} segundos`);
     }, 500);
+}
+
+function showTime(timeseconds){
+    let timer = document.querySelector(".timer");
+
+    timer.innerText = "";
+    timer.innerText = timeseconds;
+
+    let body = document.querySelector('body');
+    body.appendChild(timer);
+}
+function timer(){
+    timeseconds++;
+    showTime(timeseconds);
 }

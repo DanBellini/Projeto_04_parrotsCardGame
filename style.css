@@ -81,6 +81,15 @@
     transform: rotateY(180deg);
     background-image: none;
   }
+  .timer{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    color: orange;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
   
   @media (max-width: 1200px) {
     .game {
