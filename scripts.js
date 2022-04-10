@@ -1,5 +1,5 @@
 let cards;
-let statusGame = 0;
+let statusGame = "";
 let finish = 0;
 let countMoves = 0;
 let counthits = 0;
@@ -111,7 +111,10 @@ function finishGame(){
     statusGame = "ganhou";
     setTimeout(function(){
         alert(`Você ganhou em ${countMoves} jogadas!!\nDentro de ${timeseconds} segundos`);
+        restartGame();
     }, 500);
+    clearInterval(interval);
+    
 }
 
 function showTime(timeseconds){
@@ -126,4 +129,46 @@ function showTime(timeseconds){
 function timer(){
     timeseconds++;
     showTime(timeseconds);
+}
+function restartGame(){
+    let restart = prompt("Você quer reiniciar o jogo?");
+
+    if(restart !== "sim" || restart !== "não"){
+        while(restart !== "sim" && restart !== "não"){
+            restart = prompt("Para reiniciar o jogo, digite a palavra sim\nSe não quiser, por favor digite não");
+        };
+    }
+    if( restart == "sim"){
+        resetLets();
+
+        howManyCards();
+
+        cardsInGame();
+
+        randomSequence();
+    }
+}
+function resetLets(){
+    let game = document.querySelector(".game");
+    game.innerHTML = "";
+    
+    library = [
+        "imagens/bobrossparrot.gif",
+        "imagens/explodyparrot.gif",
+        "imagens/fiestaparrot.gif",
+        "imagens/metalparrot.gif",
+        "imagens/revertitparrot.gif",
+        "imagens/tripletsparrot.gif",
+        "imagens/unicornparrot.gif"
+    ];
+
+    cards;
+    statusGame = "";
+    finish = 0;
+    countMoves = 0;
+    counthits = 0;
+    timeseconds = 0;
+    interval;
+    cardsrandom = [];
+    cardflip = [];
 }
