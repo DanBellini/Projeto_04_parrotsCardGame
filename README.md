@@ -8,6 +8,10 @@ Este projeto foi desenvolvido como um dos meus primeiros desafios práticos de f
 
 O Parrots Card Game é um jogo da memória. O usuário deve encontrar os pares de cartas iguais, virando duas cartas por vez. O jogo desafia a atenção e memória do jogador, tornando a experiência dinâmica e educativa.
 
+## Consumo de API
+
+Uma das funcionalidades do projeto é o consumo de uma API, que fornece dinamicamente as imagens dos papagaios utilizados nas cartas. Isso torna o jogo flexível e facilmente expansível para outras imagens, bastando alterar a fonte da API.
+
 ## Instalação
 
 Para rodar o projeto localmente, siga os passos abaixo:
